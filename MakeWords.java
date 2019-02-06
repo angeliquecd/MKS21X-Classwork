@@ -16,5 +16,6 @@ public class MakeWords{
   }
 public static void main (String[] args){
   System.out.println(makeAllWords(2,3));
+  System.out.println(makeAllWords(3,4));
 }
 }
