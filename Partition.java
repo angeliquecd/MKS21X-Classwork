@@ -27,23 +27,23 @@ public class Partition{
       if (data[start+1+inc]>pivot){
         stored=data[start+1+inc];
         data[inc+start+1]=data[end];
-        data[end]=stored;
+        data[end]=stored;//swaps with last one
         inc--;
-        end--;
+        end--;//so that it doesn't go on forever
       }
       printarray(data);}
-      System.out.println("done parsing");
+    //  System.out.println("done parsing");
     for (int i=start+1;i<=endy;i++){
       if (data[i]>pivot){
-        System.out.println("in it");
+//System.out.println("in it");
         data[start]=data[i-1];
-        data[i-1]=pivot;
-        System.out.println(i-1);
+        data[i-1]=pivot;//finds correct spot
+      //  System.out.println(i-1);
         return i-1;
       }
     }
-    printarray(data);
-    return 4;
+    return endy;
+  //  printarray(data);
   }
   public static void printarray(int[] array){
     for (int a: array){
@@ -53,6 +53,6 @@ public class Partition{
   }
   public static void main (String[] args){
     int[] test = {0,3,6,7,9,4,5};
-    partition(test,0,6);
+    System.out.println(partition(test,0,6));
   }
 }
